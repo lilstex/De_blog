@@ -37,7 +37,7 @@ class RegistrationController extends Controller
         Auth::login($user);
 
         //Redirect to the home the page
-        return redirect()->home();
+        return redirect('pages.home');
     }
 
     public function destroy() 
