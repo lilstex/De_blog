@@ -14,3 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
+Route::get('/posts', "PostController@index");
+
+Route::get('/posts/create', "PostController@create");
+
+Route::post('/posts/store', "PostController@store");
+
+Route::get('/posts/{post}', "PostController@show");
+
+Route::post('/posts/{post}/comments', "CommentsController@store");
+
+Route::get('/register', 'RegistrationController@create');
+
+Route::post('/register', 'RegistrationController@store');
+
+Route::get('/login', 'SessionController@create');
+
+Route::post('/login', 'SessionController@store');
+
+Route::get('/logout', 'SessionController@destroy');
+
