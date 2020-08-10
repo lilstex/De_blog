@@ -1,12 +1,14 @@
 @extends('layouts.index')
 @section('content')
-<a href="/posts" class="btn btn-default">Go Back</a>
-<h1>{{$post->title}}</h1>
+    <a href="/posts" class="btn btn-default">Go Back</a>
+    <h1>{{$post->title}}</h1>
+    <small>Written on {{$post->created_at->toFormattedDateString()}}</small>
+        <hr>
     <div>
         {{$post->body}}
     </div>
     <hr>
-    <small>Written on {{$post->created_at->toFormattedDateString()}}</small>
+    <a href="/posts/{{$post->id}}/edit" class="btn btn-warning">Edit</a>
 
     <hr>
     <div class="comments">
@@ -20,6 +22,7 @@
         </ul>
     </div>
 
+    <hr>
     <hr>
     <div class="card">
         <div class="card-block">
