@@ -7,10 +7,19 @@
       <a class="p-2 text-dark" href="/about">About</a>
 
       @if (Auth::check())
-        <a class="p-2 ml-auto" href="#">{{ Auth::user()->name }}</a>
+      <a class="p-2 ml-auto" href="#">{{ Auth::user()->name }}</a>
+      <a class="btn btn-outline-primary" href="/posts/create">Create Post</a>
+      <a class="p-2 ml-auto" href="/logout">Log Out</a>
+     
+      @else
+      <a class="p-2 text-dark" href="/login">Log In</a>
+      <a class="p-2 text-dark" href="/register">Sign Up</a>
+
       @endif
+  
+     
     </nav>
-    <a class="btn btn-outline-primary" href="/posts/create">Create Post</a>
+   
   </div>
   
   
