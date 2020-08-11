@@ -8,7 +8,12 @@
         {{$post->body}}
     </div>
     <hr>
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-warning">Edit</a>
+    @if (!Auth::guest())
+        @if (Auth::user()->id == $post->user_id)
+            <a href="/posts/{{$post->id}}/edit" class="btn btn-warning">Edit</a>
+            <a href="/posts/{{$post->id}}/delete" class="btn btn-danger">Delete</a>
+        @endif
+    @endif
 
     <hr>
     <div class="comments">
@@ -35,9 +40,6 @@
                 <button type="submit" class="btn btn-primary">Add Comment</button>
             </div>
             </form>
-
-           
-
         </div>
     </div>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.index')
 @section('content')
-<h3>Create Post</h3>
+<h3>Edit Post</h3>
 <form action="/posts/{{$post->id}}/update" method="POST">
 <input name="_method" type="hidden" value="POST">
   {{ csrf_field()}}

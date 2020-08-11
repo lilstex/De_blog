@@ -17,15 +17,19 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/posts', "PostController@index");
 
-Route::get('/posts/create', "PostController@create");
+Route::get('/posts/create', 'PostController@create');
 
-Route::post('/posts/store', "PostController@store");
+Route::post('/posts/store', 'PostController@store');
 
-Route::get('/posts/{post}', "PostController@show");
+Route::get('/posts/{post}', 'PostController@show');
 
-Route::get('/posts/{post}/edit', "PostController@edit");
+Route::get('/posts/{post}/edit', 'PostController@edit');
 
-Route::post('/posts/{post}/comments', "CommentsController@store");
+Route::post('/posts/{post}/update', 'PostController@update');
+
+Route::get('/posts/{post}/delete', 'PostController@destroy');
+
+Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 Route::get('/register', 'RegistrationController@create');
 
