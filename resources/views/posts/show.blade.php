@@ -1,6 +1,9 @@
 @extends('layouts.index')
 @section('content')
     <a href="/posts" class="btn btn-default">Go Back</a>
+
+    <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
+    <br><br>
     <h1>{{$post->title}}</h1>
     <small>Written on {{$post->created_at->toFormattedDateString()}}</small>
         <hr>
